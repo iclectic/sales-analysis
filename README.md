@@ -20,6 +20,7 @@ The dataset consists of sales records including:
 
 ### Table Schema
 <br>
+
 `
 DROP TABLE IF EXISTS retail_sales;
 CREATE TABLE retail_sales (
@@ -43,6 +44,7 @@ CREATE TABLE retail_sales (
 
 - Count Total Sales
 <br>
+
 `
 SELECT COUNT(*) AS total_sales FROM retail_sales;
 SELECT COUNT(DISTINCT customer_id) AS unique_customers FROM retail_sales;
@@ -54,6 +56,7 @@ SELECT COUNT(DISTINCT customer_id) AS unique_customers FROM retail_sales;
 <br>
 - Find Records with Missing Values
 <br>
+
 `
 SELECT * FROM retail_sales
 WHERE transactions_id IS NULL
@@ -90,6 +93,7 @@ WHERE transactions_id IS NULL
 <br>
 -  Total Sales by Price Per Unit Range
 <br>
+
 `
 SELECT 
     CASE 
@@ -102,9 +106,11 @@ SELECT
 FROM retail_sales
 GROUP BY price_range;
 `
+
 <br>
 - Best-Selling Month in Each Year
 <br>
+
 `
 SELECT year, month, avg_sale
 FROM (
