@@ -38,9 +38,9 @@ CREATE TABLE retail_sales (
 `
 
 ## SQL Query Examples
-<br>
+
 ### Data Exploration
-<br>
+
 - Count Total Sales
 <br>
 `
