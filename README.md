@@ -1,27 +1,24 @@
-# Retail Sales Data Repository
-<br>
+# 🛍️ Retail Sales Data Repository
 
 This repository contains an Excel sheet of a retail sales dataset. The dataset includes various fields such as transaction details, customer demographics, sales figures, and more. The purpose of this dataset is to support data analysis, data cleaning, and querying exercises using SQL.
 
-## Dataset Overview
-<br>
+## 📊 Dataset Overview
+
 The dataset consists of sales records including:
-<br>
 
-- Transaction ID: Unique identifier for each sale.
-- Sale Date: Date when the transaction took place.
-- Sale Time: Time of the transaction.
-- Customer Information: ID, gender, and age.
-- Category: Product category (e.g., Electronics, Clothing).
-- Quantity: Number of units sold.
-- Price per Unit: The cost of one unit of the product.
-- COGS: Cost of Goods Sold.
-- Total Sale: Total revenue from the sale.
+- **Transaction ID**: Unique identifier for each sale.
+- **Sale Date**: Date when the transaction took place.
+- **Sale Time**: Time of the transaction.
+- **Customer Information**: ID, gender, and age.
+- **Category**: Product category (e.g., Electronics, Clothing).
+- **Quantity**: Number of units sold.
+- **Price per Unit**: The cost of one unit of the product.
+- **COGS**: Cost of Goods Sold.
+- **Total Sale**: Total revenue from the sale.
 
-### Table Schema
-<br>
+### 🗃️ Table Schema
 
-`
+```
 DROP TABLE IF EXISTS retail_sales;
 CREATE TABLE retail_sales (
     transactions_id INT PRIMARY KEY,
@@ -36,28 +33,23 @@ CREATE TABLE retail_sales (
     cogs            FLOAT,
     total_sale      FLOAT
 );
-`
+```
 
-## SQL Query Examples
+# 🛠️ SQL Query Examples
+## 🔍 Data Exploration
+### Count Total Sale
 
-### Data Exploration
-
-- Count Total Sales
-<br>
-
-`
+```
 SELECT COUNT(*) AS total_sales FROM retail_sales;
 SELECT COUNT(DISTINCT customer_id) AS unique_customers FROM retail_sales;
-SELECT COUNT(DISTINCT customer_id) AS unique_customers FROM retail_sales;
-`
-<br>
 
-### Data Cleaning
-<br>
+```
+
+
+## 🧹 Data Cleaning
 - Find Records with Missing Values
-<br>
 
-`
+```
 SELECT * FROM retail_sales
 WHERE transactions_id IS NULL
    OR sale_date IS NULL
@@ -70,11 +62,11 @@ WHERE transactions_id IS NULL
    OR price_per_unit IS NULL
    OR cogs IS NULL
    OR total_sale IS NULL;
-`
-<br>
+```
+
 - Delete Records with Missing Values
-<br>
-`
+
+```
 DELETE FROM retail_sales
 WHERE transactions_id IS NULL
    OR sale_date IS NULL
@@ -87,14 +79,13 @@ WHERE transactions_id IS NULL
    OR price_per_unit IS NULL
    OR cogs IS NULL
    OR total_sale IS NULL;
-`
-<br>
-  ### Data Analysis
-<br>
--  Total Sales by Price Per Unit Range
-<br>
+```
 
-`
+
+### 📈 Data Analysis
+- Total Sales by Price Per Unit Range
+
+```
 SELECT 
     CASE 
         WHEN price_per_unit BETWEEN 0 AND 100 THEN '0-100'
@@ -105,13 +96,12 @@ SELECT
     SUM(total_sale) AS total_sales
 FROM retail_sales
 GROUP BY price_range;
-`
 
-<br>
+```
+
 - Best-Selling Month in Each Year
-<br>
 
-`
+```
 SELECT year, month, avg_sale
 FROM (
     SELECT EXTRACT(YEAR FROM sale_date) AS year,
@@ -122,4 +112,5 @@ FROM (
     GROUP BY year, month
 ) AS ranked_sales
 WHERE rank = 1;
-`
+
+```
