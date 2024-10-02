@@ -1,6 +1,6 @@
 # Retail Sales Data Repository
 <br>
-`
+
 This repository contains an Excel sheet of a retail sales dataset. The dataset includes various fields such as transaction details, customer demographics, sales figures, and more. The purpose of this dataset is to support data analysis, data cleaning, and querying exercises using SQL.
 
 ## Dataset Overview
@@ -8,15 +8,15 @@ This repository contains an Excel sheet of a retail sales dataset. The dataset i
 The dataset consists of sales records including:
 <br>
 
-Transaction ID: Unique identifier for each sale.
-Sale Date: Date when the transaction took place.
-Sale Time: Time of the transaction.
-Customer Information: ID, gender, and age.
-Category: Product category (e.g., Electronics, Clothing).
-Quantity: Number of units sold.
-Price per Unit: The cost of one unit of the product.
-COGS: Cost of Goods Sold.
-Total Sale: Total revenue from the sale.
+- Transaction ID: Unique identifier for each sale.
+- Sale Date: Date when the transaction took place.
+- Sale Time: Time of the transaction.
+- Customer Information: ID, gender, and age.
+- Category: Product category (e.g., Electronics, Clothing).
+- Quantity: Number of units sold.
+- Price per Unit: The cost of one unit of the product.
+- COGS: Cost of Goods Sold.
+- Total Sale: Total revenue from the sale.
 
 ### Table Schema
 <br>
